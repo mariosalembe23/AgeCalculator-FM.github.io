@@ -23,39 +23,62 @@
       class="w-full h-screen flex items-center justify-center"
     >
       <div id="card" class="p-5">
-        <!-- INPUTS -->
-        <div class="w-full flex items-center justify-start gap-4">
-          <div class="flex flex-col">
-            <label for="day" class="text-gray-600 pb-2">Day</label>
-            <input
-              type="text"
-              class="w-32 px-3 py-1 transition-all outline-none rounded-md"
-              name="day"
-              id="day"
-              placeholder="DD"
-            />
+        <header>
+          <!-- INPUTS -->
+          <div class="w-full flex items-center justify-start gap-4">
+            <div class="flex flex-col">
+              <label for="day" class="text-gray-600 pb-2">Day</label>
+              <input
+                type="text"
+                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                name="day"
+                id="day"
+                placeholder="DD"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label for="day" class="text-gray-600 pb-2 text-base"
+                >Month</label
+              >
+              <input
+                type="text"
+                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                name="month"
+                id="month"
+                placeholder="MM"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label for="year" class="text-gray-700 pb-2">Year</label>
+              <input
+                type="text"
+                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                name="year"
+                id="year"
+                placeholder="DD"
+              />
+            </div>
           </div>
-          <div class="flex flex-col">
-            <label for="day" class="text-gray-600 pb-2 text-base">Month</label>
-            <input
-              type="text"
-              class="w-32 px-3 py-1 transition-all outline-none rounded-md"
-              name="month"
-              id="month"
-              placeholder="MM"
-            />
+        </header>
+        <aside>
+          <div class="flex items-center justify" id="border-button">
+            <div class="w-full border"></div>
+            <button class="bg-purple p-4 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="46"
+                height="44"
+                viewBox="0 0 46 44"
+              >
+                <g fill="none" stroke="#fff" stroke-width="2">
+                  <path
+                    d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+                  />
+                </g>
+              </svg>
+            </button>
           </div>
-          <div class="flex flex-col">
-            <label for="year" class="text-gray-700 pb-2">Year</label>
-            <input
-              type="text"
-              class="w-32 px-3 py-1 transition-all outline-none rounded-md"
-              name="year"
-              id="year"
-              placeholder="DD"
-            />
-          </div>
-        </div>
+        </aside>
       </div>
     </div>
     <!-- Day
