@@ -13,3 +13,80 @@ for (const input of inputs) {
   });
 }
 
+const day = document.getElementById("day");
+const month = document.getElementById("month");
+const year = document.getElementById("year");
+const errors = document.querySelectorAll(".error");
+const labelInput = document.querySelectorAll("label");
+
+const date = new Date();
+const thisYear = date.getFullYear();
+const i = 0;
+
+function cleanError(item, object) {
+  for (item of object) {
+    item.textContent = "";
+  }
+  return item;
+}
+
+// LOOPS FUNCTIONS
+function interation(item, object, className) {
+  for (item of object) {
+    item.classList.add(className);
+  }
+  return item;
+}
+
+function sendValues() {
+  if (day.value === "" && month.value === "" && year.value === "") {
+    interation(i, inputs, "errorInput");
+    for (const error of errors) {
+      error.textContent = "This Field is required";
+    }
+    interation(i, labelInput, "text-red-600");
+  } else if (day.value > 31 || day.value < 1) {
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[0].textContent = "Must be a valid day";
+  } else if (month.value > 12 || month.value < 1) {
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[1].textContent = "Must be a valid month";
+  } else if (year.value >= thisYear || year.value <= 1000) {
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[2].textContent = "Must be a valid year";
+  } else if (day.value > 31 && month.value > 12 && year.value >= thisYear) {
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[0].textContent = "Must be a valid day";
+    errors[1].textContent = "Must be a valid month";
+    errors[2].textContent = "Must be in the past";
+  } else if (
+    (month.value === "4" && day.value === "31") ||
+    (month.value === "6" && day.value === "31") ||
+    (month.value === "9" && day.value === "31") ||
+    (month.value === "11" && day.value === "31") ||
+    (month.value === "2" && day.value >= "30")
+  ) {
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[0].textContent = "Must be a valid day";
+  } else {
+    for (const input of inputs) {
+      input.classList.remove("errorInput");
+    }
+    for (const error of errors) {
+      error.textContent = "";
+    }
+    for (const label of labelInput) {
+      label.classList.remove("text-red-600");
+    }
+  }
+}

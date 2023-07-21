@@ -22,19 +22,20 @@
       id="container"
       class="w-full h-screen flex items-center justify-center"
     >
-      <div id="card" class="p-5">
+      <div id="card" class="p-5 shadow-sm">
         <header>
           <!-- INPUTS -->
-          <div class="w-full flex items-center justify-start gap-4">
+          <div class="w-full flex  justify-start gap-4">
             <div class="flex flex-col">
               <label for="day" class="text-gray-600 pb-2">Day</label>
               <input
                 type="text"
-                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                class="md:w-32 w-24 px-3 py-1 transition-all outline-none rounded-md"
                 name="day"
                 id="day"
                 placeholder="DD"
               />
+              <i><small class="text-red-600 error" id="errorDay"></small></i>
             </div>
             <div class="flex flex-col">
               <label for="day" class="text-gray-600 pb-2 text-base"
@@ -42,32 +43,34 @@
               >
               <input
                 type="text"
-                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                class="md:w-32 w-24  px-3 py-1 transition-all outline-none rounded-md"
                 name="month"
                 id="month"
                 placeholder="MM"
               />
+              <i><small class="text-red-600 error" id="errorMonth"></small></i>
             </div>
             <div class="flex flex-col">
               <label for="year" class="text-gray-700 pb-2">Year</label>
               <input
                 type="text"
-                class="w-32 px-3 py-1 transition-all outline-none rounded-md"
+                class="md:w-32 w-24  px-3 py-1 transition-all outline-none rounded-md"
                 name="year"
                 id="year"
                 placeholder="DD"
               />
+              <i><small class="text-red-600 error" id="errorYear"></small></i>
             </div>
           </div>
         </header>
         <aside>
-          <div class="flex items-center justify" id="border-button">
+          <div class="flex items-center relative justify md:mb-4 pb-6 pt-12 md:pt-0" id="border-button">
             <div class="w-full border"></div>
-            <button class="bg-purple p-4 rounded-full">
+            <button class="bg-purple md:p-4 p-4 rounded-full md:static absolute m-auto" onclick="sendValues()">
               <svg
+              class="md:w-10 md:h-10 w-8 h-8"
                 xmlns="http://www.w3.org/2000/svg"
-                width="46"
-                height="44"
+                
                 viewBox="0 0 46 44"
               >
                 <g fill="none" stroke="#fff" stroke-width="2">
@@ -80,18 +83,18 @@
           </div>
         </aside>
         <main>
-          <div class="mt-4 flex flex-col gap-2 pb-7">
+          <div class="mt-4 flex flex-col gap-2 pb-7 px-3">
             <div class="flex items-center">
-              <span class="text-purple text-7xl italic font-bold pe-2">__</span>
-              <h1 class="text-7xl font-bold">years</h1>
+              <span class="text-purple text-7xl italic font-bold pe-2">--</span>
+              <h1 class="md:text-7xl text-5xl font-bold">years</h1>
             </div>
             <div class="flex items-center">
-              <span class="text-purple text-7xl italic font-bold pe-2">__</span>
-              <h1 class="text-7xl font-bold">months</h1>
+              <span class="text-purple text-7xl italic font-bold pe-2">--</span>
+              <h1 class="md:text-7xl text-5xl font-bold">months</h1>
             </div>
             <div class="flex items-center">
-              <span class="text-purple text-7xl italic font-bold pe-2">__</span>
-              <h1 class="text-7xl font-bold">days</h1>
+              <span class="text-purple text-7xl italic font-bold pe-2">--</span>
+              <h1 class="md:text-7xl text-5xl font-bold">days</h1>
             </div>
           </div>
         </main>
