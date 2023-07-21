@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+:root {
+  font-family: "Poppins", sans-serif;
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  background-color: var(--Light-grey);
+}
+#card {
+  background-color: var(--White);
+  max-width: 40rem;
+  width: 90%;
+  border-radius: 10px;
+  border-bottom-right-radius: 8rem;
+}
+input {
+  font-size: 32px !important;
+  border: 1px solid #ccc;
+}
+label {
+  text-transform: uppercase;
+}
