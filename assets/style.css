@@ -24,6 +24,9 @@ input {
 input:focus {
   border: 1px solid var(--Purple) !important;
 }
+.text-purple{
+    color: var(--Purple);
+}
 label {
   text-transform: uppercase;
 }
@@ -36,4 +39,8 @@ label {
 }
 #border-button {
   width: 92%;
+}
+h1{
+    font-style: italic;
+    font-weight: 800;
 }
