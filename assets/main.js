@@ -18,6 +18,7 @@ const month = document.getElementById("month");
 const year = document.getElementById("year");
 const errors = document.querySelectorAll(".error");
 const labelInput = document.querySelectorAll("label");
+const results = document.querySelectorAll(".result");
 
 const date = new Date();
 const thisYear = date.getFullYear();
@@ -38,29 +39,41 @@ function interation(item, object, className) {
   return item;
 }
 
+function InitialValue(item, object) {
+  for (item of object) {
+    item.textContent = "--";
+  }
+  return item;
+}
+
 function sendValues() {
   if (day.value === "" && month.value === "" && year.value === "") {
+    InitialValue(i, results);
     interation(i, inputs, "errorInput");
     for (const error of errors) {
       error.textContent = "This Field is required";
     }
     interation(i, labelInput, "text-red-600");
   } else if (day.value > 31 || day.value < 1) {
+    InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
     cleanError(i, errors);
     interation(i, inputs, "errorInput");
     errors[0].textContent = "Must be a valid day";
   } else if (month.value > 12 || month.value < 1) {
+    InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
     cleanError(i, errors);
     interation(i, inputs, "errorInput");
     errors[1].textContent = "Must be a valid month";
   } else if (year.value >= thisYear || year.value <= 1000) {
+    InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
     cleanError(i, errors);
     interation(i, inputs, "errorInput");
     errors[2].textContent = "Must be a valid year";
   } else if (day.value > 31 && month.value > 12 && year.value >= thisYear) {
+    InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
     cleanError(i, errors);
     interation(i, inputs, "errorInput");
@@ -74,6 +87,7 @@ function sendValues() {
     (month.value === "11" && day.value === "31") ||
     (month.value === "2" && day.value >= "30")
   ) {
+    InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
     cleanError(i, errors);
     interation(i, inputs, "errorInput");
@@ -88,5 +102,16 @@ function sendValues() {
     for (const label of labelInput) {
       label.classList.remove("text-red-600");
     }
+
+    // CONVERTING STRING TO NUMBER
+    const dayNumber = parseInt(day.value);
+    const monthNumber = parseInt(month.value);
+    const yearNumber = parseInt(year.value);
+
+    const wasBorn = thisYear - yearNumber;
+    const monthsResult = 12 - monthNumber;
+    results[0].textContent = wasBorn;
+    results[1].textContent = monthsResult;
+    
   }
 }
