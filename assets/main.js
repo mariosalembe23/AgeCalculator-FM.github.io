@@ -109,9 +109,12 @@ function sendValues() {
     const yearNumber = parseInt(year.value);
 
     const wasBorn = thisYear - yearNumber;
-    const monthsResult = 12 - monthNumber;
+    const yearInMonth = wasBorn * 12;
+    // AS A YEAR CAN HAVE 365 DAYS OU 366 DAYS, WE
+    // WE CAN TAKE THE AVERAGE BETWEEN THE TWO: 365.25
+    const yearInDays = wasBorn * 365.25;
     results[0].textContent = wasBorn;
-    results[1].textContent = monthsResult;
-    
+    results[1].textContent = yearInMonth;
+    results[2].textContent = parseInt(yearInDays);
   }
 }
