@@ -16,7 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- TAILWIND LOCAL -->
-    <link rel="stylesheet" href="./assets/dist/output.css">
+    <link rel="stylesheet" href="./assets/dist/output.css" />
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
@@ -28,7 +28,7 @@
       <div id="card" class="p-5 shadow-sm">
         <header>
           <!-- INPUTS -->
-          <div class="w-full flex  justify-start gap-4">
+          <div class="w-full flex justify-start gap-4">
             <div class="flex flex-col">
               <label for="day" class="text-gray-600 pb-2">Day</label>
               <input
@@ -46,7 +46,7 @@
               >
               <input
                 type="text"
-                class="md:w-32 w-24  px-3 py-1 transition-all outline-none rounded-md"
+                class="md:w-32 w-24 px-3 py-1 transition-all outline-none rounded-md"
                 name="month"
                 id="month"
                 placeholder="MM"
@@ -57,7 +57,7 @@
               <label for="year" class="text-gray-700 pb-2">Year</label>
               <input
                 type="text"
-                class="md:w-32 w-24  px-3 py-1 transition-all outline-none rounded-md"
+                class="md:w-32 w-24 px-3 py-1 transition-all outline-none rounded-md"
                 name="year"
                 id="year"
                 placeholder="DD"
@@ -67,13 +67,18 @@
           </div>
         </header>
         <aside>
-          <div class="flex items-center relative justify md:mb-4 pb-6 pt-12 md:pt-0" id="border-button">
+          <div
+            class="flex items-center relative justify md:mb-4 pb-6 pt-12 md:pt-0"
+            id="border-button"
+          >
             <div class="w-full border"></div>
-            <button class="bg-purple md:p-4 p-4 rounded-full md:static absolute m-auto" onclick="sendValues()">
+            <button
+              class="bg-purple md:p-4 p-4 rounded-full md:static absolute m-auto"
+              onclick="sendValues()"
+            >
               <svg
-              class="md:w-10 md:h-10 w-8 h-8"
+                class="md:w-10 md:h-10 w-8 h-8"
                 xmlns="http://www.w3.org/2000/svg"
-                
                 viewBox="0 0 46 44"
               >
                 <g fill="none" stroke="#fff" stroke-width="2">
@@ -88,25 +93,34 @@
         <main>
           <div class="mt-4 flex flex-col gap-2 pb-7 px-3">
             <div class="flex items-center">
-              <span class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result">--</span>
+              <span
+                class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result"
+                >--</span
+              >
               <h1 class="md:text-7xl text-5xl font-bold">years</h1>
             </div>
             <div class="flex items-center">
-              <span class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result">--</span>
+              <span
+                class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result"
+                >--</span
+              >
               <h1 class="md:text-7xl text-5xl font-bold">months</h1>
             </div>
             <div class="flex items-center">
-              <span class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result">--</span>
+              <span
+                class="text-purple text-5xl md:text-7xl italic font-bold pe-2 result"
+                >--</span
+              >
               <h1 class="md:text-7xl text-5xl font-bold">days</h1>
             </div>
           </div>
         </main>
       </div>
     </div>
-    <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-  <script src="./assets/main.js" defer></script>
+    <div class="attribution text-center p-4">
+    Challenge by <a class="text-purple-600 underline" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="text-purple-600 underline" href="#">Mário Lino Salembe</a>.
+  </div>
+    <script src="./assets/main.js" defer></script>
   </body>
 </html>
