@@ -75,7 +75,7 @@ layouts e Dominar as demais Configurações que eu Posso Adaptar ao meu Tailwind
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [[@yourusername](https://www.frontendmentor.io/profile/yourusername)](https://www.frontendmentor.io/profile/mariosalembe23)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
