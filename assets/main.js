@@ -47,6 +47,14 @@ function InitialValue(item, object) {
 }
 
 function sendValues() {
+  const regexNumbersOnly = /^\d+$/;
+  if (
+    !regexNumbersOnly.test(day.value) ||
+    !regexNumbersOnly.test(month.velue) ||
+    !regexNumbersOnly.test(year.value)
+  ) {
+    return;
+  }
   if (day.value === "" && month.value === "" && year.value === "") {
     InitialValue(i, results);
     interation(i, inputs, "errorInput");
