@@ -47,14 +47,6 @@ function InitialValue(item, object) {
 }
 
 function sendValues() {
-  const regexNumbersOnly = /^\d+$/;
-  if (
-    !regexNumbersOnly.test(day.value) ||
-    !regexNumbersOnly.test(month.velue) ||
-    !regexNumbersOnly.test(year.value)
-  ) {
-    return;
-  }
   if (day.value === "" && month.value === "" && year.value === "") {
     InitialValue(i, results);
     interation(i, inputs, "errorInput");
@@ -62,6 +54,24 @@ function sendValues() {
       error.textContent = "This Field is required";
     }
     interation(i, labelInput, "text-red-600");
+  } else if (!regexNumbersOnly.test(day.value)) {
+    InitialValue(i, results);
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[0].textContent = "Must be a number";
+  } else if (!regexNumbersOnly.test(month.value)) {
+    InitialValue(i, results);
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[1].textContent = "Must be a number";
+  } else if (!regexNumbersOnly.test(year.value)) {
+    InitialValue(i, results);
+    interation(i, labelInput, "text-red-600");
+    cleanError(i, errors);
+    interation(i, inputs, "errorInput");
+    errors[2].textContent = "Must be a number";
   } else if (day.value > 31 || day.value < 1) {
     InitialValue(i, results);
     interation(i, labelInput, "text-red-600");
